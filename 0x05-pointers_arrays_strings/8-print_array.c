@@ -1,31 +1,22 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * rot13 - encoder rot13
- * @s: pointer to string params
- *
- * Return: *s
+ * print_array - a function that prints n elements of an array
+ * @a: array name
+ * @n: is the number of elements OF the array to be printed
+ * Return: a and n inputs
  */
-
-char *rot13(char *s)
+void print_array(int *a, int n)
 {
 	int i;
-	int j;
-	char data1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 0; i < (n - 1); i++)
 	{
-		for (j = 0; j < 52; j++)
-		{
-			if (s[i] == data1[j])
-			{
-				s[i] = datarot[j];
-				break;
-			}
-		}
+		printf("%d, ", a[i]);
 	}
-	return (s);
+		if (i == (n - 1))
+		{
+			printf("%d", a[n - 1]);
+		}
+			printf("\n");
 }
-
